@@ -3,6 +3,6 @@
 const notepad = @import("notepad.zig");
 
 pub fn main() !void {
-    try notepad.outStream().print("hello world!\n", .{});
+    try notepad.init(std.heap.page_allocator).outStream().print("hello world!\n", .{});
 }
 ```
